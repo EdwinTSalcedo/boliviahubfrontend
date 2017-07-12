@@ -1,0 +1,51 @@
+<div ba-panel ba-panel-class="profile-page">
+    <div class="panel-content">
+            <a ng-click="addUser()" class="btn btn-small btn-primary">Add</a>
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr ng-repeat="usuario in usuariosProyecto">
+                            <td width="5%" style="vertical-align: middle;">
+                                <div class="pull-left">
+                                    <img check-image ng-src="{{::( usuario.email | profilePicture )}}" class="avatar">
+                                </div>
+                            </td>
+                            <td width="15%">
+                                <h2>{{usuario.nombre}}</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                                <code>{{usuario.email}}</code>
+                            </td>
+                            <td width="10%">
+                                <div class="div-commit">
+                                    <h1 class="text-commit">{{usuario.commits.length}}</h1>
+                                    <a href="#" ng-show="usuario.commits.length>0">Commits</a>
+                                    <a href="#" ng-if="!usuario.commits.length">No commits</a>
+                                </div>
+                            </td>
+                            <td width="20%" style="vertical-align: middle;">
+                                <div class="pull-left language_summary">
+                                    <div class="pull-left" style="min-height: 99px;">
+                                        <div class="language_name_3" ng-repeat="etiqueta in usuario.tags">
+                                            <span>
+                                                <a href="#">{{etiqueta}}</a>
+                                            </span>
+                                        </div>
+                                        <div class="pull-left other_language" ng-show="usuario.tags.length > 10">
+                                            <a href="/accounts/Stefan/languages">y ## otras etiquetas</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                               <td><a ng-click="editUser(usuario)" class="btn btn-small btn-primary">edit</a></td>
+                                <td><a ng-click="deleteUser(usuario.nombre)" class="btn btn-small btn-danger">delete</a></td>
+                            
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

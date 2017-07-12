@@ -1,0 +1,214 @@
+$default: #ffffff;
+$body-bg: #F0F3F4;
+$default-text: #666666;
+$help-text: #949494;
+$label-text: #ffffff;
+$disabled: #dddddd;
+$disabled-bg: tint($disabled, 15%);
+$border: #d6d6d6;
+$border-light: tint($border, 15%);
+$input-border: shade($border, 5%);
+$input-background: #ffffff;
+$sidebar: #000; //1C2B36
+$sidebar-text: #ffffff;
+$dropdown-text: #7d7d7d;
+$bootstrap-panel-text: #7d7d7d;
+$bootstrap-panel-bg: #ffffff;
+$mail-box: whitesmoke;
+$auth-panel-background: #ffffff;
+$progress-background: rgba(#000000, 0.07);
+$progress-default: rgba(#000000, 0.15);
+$primary: #0082C6 !default;
+$info: #2dacd1 !default;
+$success: #90b900 !default;
+$warning: #dfb81c !default;
+$danger: #e85656 !default;
+$primary-light: tint($primary, 30%);
+$info-light: tint($info, 30%);
+$success-light: tint($success, 30%);
+$warning-light: tint($warning, 30%);
+$danger-light: tint($danger, 30%);
+$primary-dark: shade($primary, 15%);
+$info-dark: shade($info, 15%);
+$success-dark: shade($success, 15%);
+$warning-dark: shade($warning, 15%);
+$danger-dark: shade($danger, 15%);
+$primary-bg: tint($primary, 20%);
+$info-bg: tint($info, 20%);
+$success-bg: tint($success, 20%);
+$warning-bg: tint($warning, 20%);
+$danger-bg: tint($danger, 20%);
+
+#login-dp {
+    min-width: 250px;
+    padding: 14px 14px 0;
+    overflow: hidden;
+    background-color: rgba(255,255,255,.8);
+}
+
+#login-dp .help-block {
+    font-size: 12px;
+}
+
+#login-dp .bottom {
+    background-color: rgba(255,255,255,.8);
+    border-top: 1px solid #ddd;
+    clear: both;
+    padding: 14px;
+}
+
+#login-dp .button {
+    background-color: #000;
+}
+
+#login-dp .social-buttons {
+    margin: 12px 0;
+}
+
+#login-dp .social-buttons a {
+    width: 49%;
+}
+
+#login-dp .form-group {
+    margin-bottom: 10px;
+}
+/* css para personas list*/
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {
+    background-color: #F6F6F6;
+}
+
+.celdaCentrada {
+    vertical-align: middle;
+    text-align: center;
+}
+
+.avatar {
+    width: 150px;
+    margin: 10px;
+    border: 5px solid $disabled;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+}
+
+.div-commit {
+    text-align: center;
+    margin-right: 10px;
+    margin-left: 10px;
+    float: left;
+    display: inline;
+    padding: inherit;
+    border-radius: 10px;
+    border: 2px dotted $disabled;
+    height: 220px;
+    width: 250px;
+
+    & a {
+        font-size: 15px;
+        margin-top: 25px;
+    }
+}
+
+.text-commit {
+    margin-top: 50px;
+    color: $dropdown-text;
+    font-size: 75px;
+}
+
+.other_messages {
+    color: $sidebar;
+    font-size: 12px;
+    white-space: nowrap;
+    line-height: 12px;
+    margin-bottom: 1px;
+    margin-left: 30px;
+}
+
+.language_summary {
+    margin-left: 30px;
+}
+
+.language_name_1 {
+    width: 113px;
+    margin-bottom: 5px;
+    height: 28px;
+    line-height: 28px;
+    background-color: $primary;
+
+    & a {
+        margin-left: 15px;
+        color: $label-text;
+    }
+}
+
+.language_name_2 {
+    width: 113px;
+    margin-bottom: 5px;
+    height: 28px;
+    line-height: 28px;
+    background-color: $info;
+
+    & a {
+        margin-left: 15px;
+        color: $label-text;
+    }
+}
+
+.language_name_3 {
+    width: 113px;
+    margin-bottom: 5px;
+    height: 28px;
+    line-height: 28px;
+    background-color: $success;
+
+    & a {
+        margin-left: 15px;
+        color: $label-text;
+    }
+}
+
+.language_name_4 {
+    width: 113px;
+    margin-bottom: 5px;
+    height: 28px;
+    line-height: 28px;
+    background-color: $warning;
+
+    & a {
+        margin-left: 15px;
+        color: $label-text;
+    }
+}
+
+.language_name_5 {
+    width: 113px;
+    margin-bottom: 5px;
+    height: 28px;
+    line-height: 28px;
+    background-color: $danger;
+
+    & a {
+        margin-left: 15px;
+        color: $label-text;
+    }
+}
+
+.margin_bottom_10 {
+    margin-bottom: 10px !important;
+}
+
+.margin_left_5 {
+    margin-left: 5px !important;
+}
+@media(max-width:768px) {
+    #login-dp {
+        background-color: #fff;
+        color: #fff;
+    }
+
+    #login-dp .bottom {
+        background-color: inherit;
+        border-top: 0 none;
+    }
+}

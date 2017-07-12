@@ -1,0 +1,185 @@
+<div ba-panel ba-panel-class="profile-page">
+    <div class="panel-content">
+        <h3 class="with-line">Información General</h3>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row clearfix">
+                    <label for="inputFirstName" class="col-sm-3 control-label">Foto</label>
+
+                    <div class="col-sm-9">
+                        <div class="userpic">
+                            <div class="userpic-wrapper">
+                                <img ng-src="{{ ( 'avatar-user' | profilePicture ) }}" ng-click="uploadPicture()">
+                            </div>
+                            <i class="ion-ios-close-outline" ng-click="removePicture()" ng-if="!noPicture"></i>
+                            <a href class="change-userpic" ng-click="uploadPicture()">Cambiar foto</a>
+                            <input type="file" ng-show="false" id="uploadFile" ng-file-select="onFileSelect($files)">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row clearfix">
+                    <label for="inputFirstName" class="col-sm-3 control-label">Nombre (s)</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputFirstName" placeholder="" ng-model="usuario.nombre" value="{{ usuario.nombre }}">
+                    </div>
+                </div>
+                <div class="form-group row clearfix">
+                    <label for="inputLastName" class="col-sm-3 control-label">Apellido(s)</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputLastName" placeholder="" ng-model="usuario.apellidos" value="{{ usuario.apellidos }}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row clearfix">
+                    <label class="col-sm-3 control-label">Proyectos</label>
+
+                    <div class="col-sm-9">
+                        <select class="form-control" selectpicker>
+                            <option>Modulo Contratación</option>
+                            <option>Documentos</option>
+                            <option>Firma Digital</option>
+                            <option>NIC.bo</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group row clearfix">
+                    <label for="inputOccupation" class="col-sm-3 control-label">Ocupación</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputOccupation" placeholder=""  ng-model="usuario.ocupacion" value="{{ usuario.ocupacion }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="with-line">Cambio de contraseña</h3>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row clearfix">
+                    <label for="inputPassword" class="col-sm-3 control-label">Contraseña</label>
+
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" id="inputPassword" placeholder="" ng-model="usuario.password" value="{{ usuario.password }}">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row clearfix">
+                    <label for="inputConfirmPassword" class="col-sm-3 control-label">Confirmar contraseña</label>
+
+                    <div class="col-sm-9">
+                        <input type="password" class="form-control" id="inputConfirmPassword" ng-model="usuario.passwordConfirm" value="{{ usuario.passwordConfirm }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="with-line">Información de contacto</h3>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row clearfix">
+                    <label for="inputEmail3" class="col-sm-3 control-label">Correo Electrónico</label>
+
+                    <div class="col-sm-9">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="" ng-model="usuario.email" value="{{ usuario.email }}">
+                    </div>
+                </div>
+                <div class="form-group row clearfix">
+                    <label for="inputPhone" class="col-sm-3 control-label">Nro. Teléfono</label>
+
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" id="inputPhone" placeholder=""  ng-model="usuario.telefono" value="{{ usuario.telefono }}">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="with-line">Perfiles Asociados</h3>
+
+        <div class="social-profiles row clearfix">
+            <div class="col-md-3 col-sm-4" ng-repeat="item in perfilesAsociados">
+
+                <a class="sn-link" href ng-click="showModal(item)" ng-if="!item.href">
+                    <i class="socicon {{ item.icon }}"></i>
+                    <span>{{ item.name }}</span>
+                </a>
+
+                <a class="sn-link connected" href="{{ item.href }}" target="_blank" ng-if="item.href">
+                    <i class="socicon {{ item.icon }}"></i>
+                    <span>{{ item.name }}</span>
+                    <em class="ion-ios-close-empty sn-link-close" ng-mousedown="unconnect(item)"></em>
+                </a>
+            </div>
+        </div>
+
+        <h3 class="with-line">Notificaciones</h3>
+
+        <div class="notification row clearfix">
+            <div class="col-sm-6">
+                <div class="form-group row clearfix">
+                    <label class="col-xs-8">Cuando recibo un mensaje</label>
+
+                    <div class="col-xs-4">
+                        <switch color="success" ng-model="switches[0]"></switch>
+                    </div>
+                </div>
+                <div class="form-group row clearfix">
+                    <label class="col-xs-8">Cuando alguien me envía una invitación</label>
+
+                    <div class="col-xs-4">
+                        <switch color="success" ng-model="switches[1]"></switch>
+                    </div>
+                </div>
+                <div class="form-group row clearfix">
+                    <label class="col-xs-8">Cuando la información del perfil cambia</label>
+
+                    <div class="col-xs-4">
+                        <switch color="success" ng-model="switches[2]"></switch>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="form-group row clearfix">
+                    <label class="col-xs-8">Cuando alguien inicia sesión en su cuenta desde un nuevo dispositivo o navegador</label>
+                    <div class="col-xs-4">
+                        <switch color="success" ng-model="switches[3]"></switch>
+                    </div>
+                </div>
+                <div class="form-group row clearfix">
+                    <label class="col-xs-8">Informes Semanales</label>
+
+                    <div class="col-xs-4">
+                        <switch color="success" ng-model="switches[4]"></switch>
+                    </div>
+                </div>
+
+                <div class="form-group row clearfix">
+                    <label class="col-xs-8">Reportes diarios</label>
+
+                    <div class="col-xs-4">
+                        <switch color="success" ng-model="switches[5]"></switch>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button type="button" class="btn btn-primary btn-with-icon save-profile" ng-click="guardarDatos(usuario)">
+            <i class="ion-android-checkmark-circle"></i>Guardar Cambios
+        </button>
+         <button type="button" class="btn btn-danger btn-with-icon save-profile" ng-click="desactivar(usuario)">
+            <i class="ion-android-checkmark-circle" ></i>Desactivar Cuenta
+        </button>
+    </div>
+</div>

@@ -1,0 +1,166 @@
+<div class="row">
+	<div class="col-md-12 col-lg-12">
+		<div ba-panel ba-panel-class="light-text">
+			<div class="row">
+			   <div class="col-md-1">
+		            <div ng-if="proyecto.icono"> 
+		                <img class="photo-icon img-responsive"  src="{{::( proyecto.icono | appImage )}}" width="100%" >
+		            </div>
+		            <div class="letter-icon" ng-if="!proyecto.icono">
+		            	{{proyecto.nombre | limitTo:1 | uppercase}}
+		            </div>
+		        </div>
+                    <div class="col-md-2">
+                          <h1>
+                              {{proyecto.nombre}}  
+                          </h1>
+                    </div>
+                  </div>
+        	</div>
+            <!-- <p style="margin-bottom: -3px;">
+            <img alt="" ="cliam contribution" src="{{::( 'branch.png' | appImage )}}" width="10%">
+            &nbsp;&nbsp;
+            <span class="green">Sincroniza </span>
+            tus contribuciones
+            </p>
+            <p align="right" style="margin-bottom: -3px;">
+            <span class="green">Administra la información</span>
+            de tu proyecto
+            &nbsp;&nbsp;
+            <img alt="Manage" src="{{::( 'diamond.png' | appImage )}}" width="15%">
+            </p>
+            <p style="margin-bottom: -3px;">
+            <img alt="Build" src="{{::( 'network.png' | appImage )}}" width="15%">
+            &nbsp;&nbsp;
+            <span class="green">Genera contactos </span>
+            con contribuyentes
+            </p>
+            <a class="btn btn_join_now pull-right" href="/registrations/new?ref=homepage"><button type="button" class="btn btn-info btn-raised btn-mm">Registrate</button></a> -->
+        </div>
+ 	
+	</div>
+</div>
+<div class="row">
+      <div class="col-sm-12 col-lg-4">
+            <div ba-panel ba-panel-class="light-text xsmall-panel" ba-panel-title="Descripción del Proyecto">
+                  <p>
+                        {{proyecto.descripcion}}
+                  </p>
+                  <h4>Etiquetas</h4>
+                  <p>
+                        <div class="labels-container" style="margin-top: 0px;text-align: left;">
+                              <div class="label-item">
+                                    <span class="tag label work" style="    background-color: #90b900">NodeJS</span>
+                              </div>
+                              <div class="label-item">
+                                    <span class="tag label family" style="    background-color: #90b900">AngularJS</span>
+                              </div>
+                              <div class="label-item">
+                                    <span class="tag label friend" style="    background-color: #90b900">GitLab</span>
+                              </div>
+                              <div class="label-item">
+                                    <span class="tag label study" style="    background-color: #90b900">RTD</span>
+                              </div>
+                        </div>
+                  </p>
+                  <div class="letter-icon" ng-if="!proyecto.icono">
+                        {{proyecto.nombre | limitTo:1 | uppercase}}
+                  </div>
+                  <span class="sub-photo-icon" ng-class="::proyecto.tipo"></span>
+            </div>
+      </div>
+      <div class="col-sm-12 col-lg-4">
+            <div ba-panel ba-panel-class="light-text xsmall-panel" ba-panel-title="Información del Proyecto">
+                <p> <i class="fa fa-user-circle"></i>
+                  <!--  {{proyecto.usuarios.length}} -->
+                   56 Usuarios 
+                </p>
+                <p > <i class="fa fa-code"></i>
+                   <!-- {{proyecto.commits.length}}  -->
+                   58947 Commits 
+                </p>
+                <p > <i class="fa fa-calendar"></i>
+                   <!-- {{proyecto.commits.length}}  -->
+                   Primer commit {{proyecto.creacion}}
+                </p>
+                <p > <i class="fa fa-calendar"></i>
+                   <!-- {{proyecto.commits.length}}  -->
+                   Ultimo commit {{proyecto.creacion}} 
+                </p>
+            </div>  
+      </div>
+      <div class="col-sm-12 col-lg-4">
+            <div ba-panel ba-panel-class="light-text xsmall-panel" ba-panel-title="Referencias">
+                  <div class="col-xs-12">
+                        <div class="col-xs-5 text-right">Institución:</div>
+                        <div class="col-xs-7" style="margin-bottom: .5em;">
+                              <a href="/orgs/apache">ADSIB</a>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-xs-5 text-right">
+                        Ubicación del Código:
+                        </div>
+                        <div class="col-xs-7" style="margin-bottom: .5em;">
+                        <i><a href="/p/apache/enlistments">Gitlab</a></i>
+                        <br>
+                        </div>
+                        <div class="clearfix"></div>
+                        <div class="col-xs-5 text-right">
+                        Licencias:
+                        </div>
+                        <div class="col-xs-7" style="margin-bottom: .5em;">
+                              <span itemscope="" itemtype="http://schema.org/CreativeWork">
+                                    <span itemprop="publishingPrinciples">
+                                    <a href="https://www.openhub.net/licenses/apache_2">LGPL</a>
+                                    </span>
+                              </span>
+                        </div>
+                        <div class="clearfix"></div>
+                  <!-- <div class="col-xs-5 text-right">
+                  <a href="/p/apache/similar">Similar Projects:</a>
+                  </div>
+                  <div class="col-xs-7" style="margin-bottom: .5em;">
+                  <div data-project-id="apache" id="similar_projects"><table>
+                  <tbody><tr>
+                  <td valign="top">
+                  <a class="pull-left" href="/p/nginx">
+                  <img style="width:24px; height:24px; border:0 none;" itemprop="image" alt="nginx" src="https://s3.amazonaws.com/cloud.ohloh.net/attachments/2298/nginx_small.png"></a>
+                  <a class="pull-left proj-name" href="/p/nginx">nginx</a>
+                  </td>
+                  <td valign="top">
+                  <a class="pull-left" href="/p/nanowebserver">
+                  <p style="background-color:#356AA0; color:#FFF; border:1px dashed #FFF;       font-size:18px; line-height:24px; width:24px; height:24px;       text-align:center; float:left; margin-bottom:0; margin-top:0; margin-right:2px">N</p>
+                  </a>
+                  <a class="pull-left proj-name" href="/p/nanowebserver">Nanoweb - Th...</a>
+                  </td>
+                  </tr>
+                  <tr>
+                  <td valign="top">
+                  <a class="pull-left" href="/p/hiawatha">
+                  <img style="width:24px; height:24px; border:0 none;" itemprop="image" alt="Hiawatha webserver" src="https://s3.amazonaws.com/cloud.ohloh.net/attachments/88795/hiawatha_logo_small.png"></a>
+                  <a class="pull-left proj-name" href="/p/hiawatha">Hiawatha web...</a>
+                  </td>
+                  <td valign="top">
+                  <a class="pull-left" href="/p/p_12126">
+                  <img style="width:24px; height:24px; border:0 none;" itemprop="image" alt="Roxen" src="https://s3.amazonaws.com/cloud.ohloh.net/attachments/5235/roxen_small.png"></a>
+                  <a class="pull-left proj-name" href="/p/p_12126">Roxen</a>
+                  </td>
+                  </tr>
+                  </tbody></table>
+                  </div>
+                  <div class="hidden" id="related_spinner"><img src="/assets/spinner-f6ecff617ec2ba7f559e6f535cad9b70a3f91120737535dab4d4548a6c83576c.gif" alt="Spinner"></div>
+                  </div> -->
+                  <div class="clearfix"></div>
+                  <div class="col-xs-5 text-right">
+                  Administradores:
+                  </div>
+                  <div class="col-xs-7" style="margin-bottom: .5em;">
+                  <a href="#/accounts/covener">Claudio Cuellar</a>
+                  <!-- , <a href="/accounts/jim">Jim Jagielski</a>, and <a href="/accounts/wrowe">William A. Rowe Jr.</a> -->
+                  </div>
+                  </div>
+            </div>
+        </div>
+      
+      </div>
+</div>

@@ -1,0 +1,60 @@
+<div ba-panel ba-panel-class="profile-page">
+    <div class="panel-content">
+        <div class="row">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <tbody>
+                        <tr ng-repeat="persona in usuariosProyecto">
+                            <td width="5%" style="vertical-align: middle;">
+                                <div class="pull-left">
+                                    <img check-image ng-src="{{::( persona.email | profilePicture )}}" class="avatar">
+                                </div>
+                            </td>
+                            <td width="15%">
+                                <h2>{{persona.nombre}}</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                </p>
+                                <code>{{persona.email}}</code>
+                            </td>
+                            <td width="10%">
+                                <div class="div-commit">
+                                    <h1 class="text-commit">{{persona.commits}}</h1>
+                                    <a href="#" ng-show="persona.commits.length>0">Commits</a>
+                                    <a href="#" ng-if="!persona.commits.length">No commits</a>
+                                </div>
+                            </td>
+                            <td width="20%" style="vertical-align: middle;">
+                                <div class="pull-left language_summary">
+                                    <div class="pull-left" style="min-height: 99px;">
+                                        <div class="language_name_3" ng-repeat="etiqueta in persona.tags">
+                                            <span>
+                                                <a href="#">{{etiqueta}}</a>
+                                            </span>
+                                        </div>
+                                        <div class="pull-left other_language" ng-show="persona.tags.length > 10">
+                                            <a href="/accounts/Stefan/languages">y ## otras etiquetas</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </td>
+                            <td width="40%">
+                                <div class="pull-left project_summary">
+                                    <div class="margin_bottom_10" ng-repeat="proyecto in persona.proyectos">
+                                        <a href="#" title="Title-repo">
+                                            <img class="photo-icon" ng-src="{{::( 'PROYECTO' | profilePicture )}}" width="22" height="22">
+                                        </a>
+                                        <a class="margin_left_5" href="#" title="{{proyecto.datos.nombre}}">{{proyecto.datos.nombre}}</a>
+                                    </div>
+                                    <div class="pull-left other_language" ng-show="proyecto.proyectos.length > 5">
+                                        <a href="/accounts/Stefan/languages">y otros proyectos</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

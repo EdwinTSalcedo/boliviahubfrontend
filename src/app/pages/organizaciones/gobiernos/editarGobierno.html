@@ -1,0 +1,30 @@
+<div ba-panel ba-panel-class="profile-page col-md-6 col-md-offset-3" id="formulario">
+    <div class="panel-content">{{nombre}}
+         <form class="ng-pristine " name="formAdicionar" id="formAdicionar" ng-model="datos" ng-submit="editOrganizacion(organizacion)">
+             <div class="form-group">
+                 <label for="input01">Logo de  aorganizacion</label> 
+                 <input type="text" class="form-control" id="logo" name="logo" ng-model="organizacion.imageUrl" value ="">
+             </div>
+             <div class="form-group">
+                 <label for="input01">Nombre de la organizacion</label> 
+                 <input type="text" class="form-control" id="nombre" name="nombre" ng-model="organizacion.nombre" placeholder="Introduzca el nombre de la organizacion" value ="">
+             </div>
+             <div class="form-group">
+                 <label for="input01">Pais</label>  
+                 <input type="text" class="form-control" id="descripcion" name="descripcion" ng-model="organizacion.descripcion" placeholder="Introduzca su pais">
+             </div>
+             <div class="form-group">
+                 <label for="input01">Cantidad</label>  
+                 <input type="text" class="form-control" id="cantidad" name="cantidad" ng-model="organizacion.cantidad" placeholder="Introduzca la cantidad">
+             </div>
+             <div class="form-group">
+                 <label for="input01">linkGov</label>  
+                 <input type="text" class="form-control" id="linkGov" name="linkGov" ng-model="organizacion.linkGov" placeholder="Introduzca su linkGov">
+             </div>
+             <div class="form-group">
+                     <button  class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 btn btn-danger" ui-sref="organizaciones.listar">Cancelar </button>
+                    <input type="submit" class="col-md-4 col-sm-4 col-xs-4 col-md-offset-1 col-sm-offset-1 col-xs-offset-1 btn btn-success" value="Enviar">
+             </div>
+        </form>
+    </div>
+</div>

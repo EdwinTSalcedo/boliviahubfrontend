@@ -1,0 +1,42 @@
+    <div class="ui-view">
+
+<div ba-panel ba-panel-class="profile-page">
+        <div class="panel-content">
+                <a ui-sref="usuarios.adicionar" class="btn btn-small btn-primary">Nuevo</a>
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <tbody>
+                            <tr ng-repeat="usuario in usuariosProyecto">
+                                <td width="5%" style="vertical-align: middle;">
+                                    <div class="pull-left">
+                                        <img check-image ng-src="{{::( usuario.email | profilePicture )}}" class="avatar" style="width: 50px !important">
+                                    </div>
+                                </td>
+                                <td class="center">
+                                    <h4>{{usuario.nombre}}</h4>
+                                </td>
+                                <td class="center">
+                                    <code>{{usuario.email}}</code>
+                                </td>
+                                <td class="center">
+                                    <button type="button" class="btn btn-default btn-icon" ui-sref="usuarios.editar({ id: (usuario.nombre).replace(' ','-') })"><i class="ion-edit"></i></button>
+                                </td>
+                                <td class="center">
+                                    <button type="button" class="btn btn-default btn-icon" ng-click="eliminar(usuario._id,$index)"><i class="ion-trash-a"></i></button>
+                                </td>
+                                
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .center{
+        vertical-align: middle !important;
+        text-align: center !important;
+    }
+</style>

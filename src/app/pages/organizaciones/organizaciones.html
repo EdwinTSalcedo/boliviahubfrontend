@@ -1,0 +1,100 @@
+<style>
+.img-responsive {
+  display: block;
+  max-width: 900%;
+  height: auto; 
+}
+</style>
+
+<div class="row">
+
+    <!--mas activas-->
+<!--     <div class="col-md-12 col-lg-5">        
+        <div ba-panel ba-panel-title="mas activas" ba-panel-class="light-text">
+            <div class="row" ng-repeat="activa in activas | limitTo:5" style="margin: 27px 27px; ">
+                <div class="col-xs-2 col-md-2 col-sm-3">
+                    <img class="img-responsive pull-left" width="60" height="60" itemprop="image" alt="{{activa.descripcion}}" style="margin: 0px 20px -20px -30px;" src="{{activa.imageUrlActiva}}"></a>
+                </div>
+                    <div class="media-body">
+                        <a class="mt-0" title="{{ activa.nombreActiva }}" href="{{ activa.activaUrl }}">{{ activa.nombreActiva }}</a>
+                        <div class="margin_top_10"></div>
+                        <i class="small mb-0">{{activa.descripcion}}</i>
+                        <br/>
+                    </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!--Government-->
+    <!--https://government.github.com/community/-->
+    <div class="ui-view">
+    <div ba-panel ba-panel-class="profile-page">
+        <div class="panel-content">
+             <p align="right"><a ui-sref="organizaciones.adicionar" class="btn btn-small btn-primary">Nuevo</a></p>
+             <div class="row">
+                <div class="table-responsive">
+                    <table st-table="rowCollection" class="table product-table " at-table at-list="list">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Nombre</th>
+                                <th>Descripcion</th>
+                                <th>Editar</th>
+                                <th>Eliminar</th>
+                                <!--<th>Repositorios</th>-->
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="organizacion in organizaciones | limitTo:11">
+                                <td> <img width="50" height="50" ng-src="{{ organizacion.imageUrl }}"> </td>
+                                <td><a class="mt-0" title="{{ organizacion.linkGov }}" href="{{organizacion.linkGov}}">{{organizacion.nombre}}</a> </td>
+                                <td>{{organizacion.descripcion}}</td>
+                                <td style="vertical-align: middle;"><a  class="btn btn-default btn-icon" ui-sref="organizaciones.editar({ id: organizacion.nombre })"><i class="ion-edit"></i></a></td>
+                                <td style="vertical-align: middle;"><a type="button" class="btn btn-default btn-icon" ng-click="eliminar(organizacion._id,$index)"><i class="ion-trash-a"></i></a></td>
+                                
+                                
+                                <!--<td>{{government.cantidad}}</td>-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+       </div>
+   </div>
+
+</div>
+<!-- <div class="row">
+
+    <!--nuevas
+    <div class="col-md-12 col-lg-12">
+     <a ng-click="addOrganizacion()" class="btn btn-small btn-primary">Nuevo</a>        
+        <div ba-panel ba-panel-title="organizaciones" ba-panel-class="light-text">
+            <div class="row" ng-repeat="nueva in nuevas | limitTo:6" style="margin: 27px 27px; ">
+                <div class="col-xs-2 col-md-2 col-sm-3">
+                    <a title="{{ nueva.nombreNueva }}" style="text-decoration: none" class="logo" href="{{nueva.imageUrlNueva}}">
+                    <img class="img-responsive pull-left" style="margin: 0px 20px -20px -30px;" width="60" height="60" alt="{{nueva.nombreNueva}}" src="{{nueva.imageUrlNueva}}"></a>
+                </div>
+                <div class="col-xs-7 col-md-6 col-sm-6">
+                    <div class="media-body">
+                        <a class="mt-0" title="{{ nueva.nombreNueva }}" href="{{ nueva.imageUrlNueva }}">{{ nueva.nombreNueva }}</a>
+                        <div class="margin_top_10"></div>
+                        <i class="small mb-0">{{nueva.descripcionNueva}}</i>
+                    </div>
+                </div>
+                <div class="col-xs-3 col-md-4 col-sm-3">
+                      <button type="button" class="btn btn-default btn-icon" ng-click="editOrganizacion(nueva)"><i class="ion-edit"></i></button>
+                      <button type="button" class="btn btn-default btn-icon" ng-click="deleteOrganizacion($index)"><i class="ion-trash-a"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+ -->
+    <!--estadisticas-->
+    <!-- <div class="widgets col-md-12 col-lg-7">
+        <div class="panel-default" ba-panel ba-panel-title="estadisticas" >
+            <div ng-include="'app/pages/organizaciones/organizationPieChart/organizationPieChart.html'"></div>
+        </div>
+    </div </div> 
+</div>
+
+-->
